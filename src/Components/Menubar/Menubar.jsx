@@ -24,7 +24,9 @@ const Menubar = () => {
 
   const handleNormalOrder = () => {
     dispatch(actions.fetchCases())
-    dispatch(actions.fetchDistrictCases(state))
+    if (state) {
+      dispatch(actions.fetchDistrictCases(state))
+    }
   };
 
   return (
